@@ -16,7 +16,10 @@ int main()
     cin >> wyraz;
 
     Funkcja2(klucz, wyraz);
-    cout << wyraz;
+    cout << "Zaszyfrowany wyraz: " << wyraz << endl;
+
+    Funkcja2(-klucz, wyraz);
+    cout << "Rozszyfrowany wyraz: " << wyraz;
 }
 
 void Funkcja2(int klucz, char wyraz[]) {
@@ -26,24 +29,24 @@ void Funkcja2(int klucz, char wyraz[]) {
     }
     if (klucz >= 0) {
         for (int i = 0; i < dlugosc; i++) {
-            if (wyraz[1] + klucz <= 'z') {
-                wyraz[1] += klucz;
+            if (wyraz[i] + klucz <= 'z') {
+                wyraz[i] += klucz;
             }
             else
             {
-                wyraz[1] = wyraz[1] + klucz - 26;
+                wyraz[i] = wyraz[i] + klucz - 26;
             }
         }
     }
     else
     {
         for (int i = 0; i < dlugosc; i++) {
-            if (wyraz[1] + klucz >= 'a') {
-                wyraz[1] += klucz;
+            if (wyraz[i] + klucz >= 'a') {
+                wyraz[i] += klucz;
             }
             else
             {
-                wyraz[1] = wyraz[1] + klucz + 26;
+                wyraz[i] = wyraz[i] + klucz + 26;
             }
         }
     }
